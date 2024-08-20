@@ -32,7 +32,7 @@ Antes de começar, certifique-se de ter o seguinte instalado em sua máquina:
 1. Clone o repositório:
 
     ```bash
-    git clone 
+    git clone https://github.com/Jacksonnr/consultation-api.git
     ```
 
 2. Instale as dependências:
