@@ -47,8 +47,7 @@ Antes de começar, certifique-se de ter o seguinte instalado em sua máquina:
     Antes de iniciar o servidor, você pode precisar configurar variáveis de ambiente, como o banco de dados. Certifique-se de criar um arquivo .env com as configurações apropriadas. Um exemplo de arquivo .env pode ser:
 
     ```bash
-    DATABASE_URL=your_database_url
-    PORT=3333
+    DATABASE_URL = './db/app.db'
     ```
 
 4. Crie o banco de dados:
