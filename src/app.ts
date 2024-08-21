@@ -1,6 +1,6 @@
 import fastify from 'fastify'
-import { appointmentRoutes  } from './routes/appointment'
+import { consultationRoutes  } from './routes/consultations'
 
 export const app = fastify()
 
-app.register(appointmentRoutes)
+app.register(consultationRoutes)
