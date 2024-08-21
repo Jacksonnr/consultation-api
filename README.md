@@ -19,6 +19,13 @@ Pensando em um cenário onde você é o administrador de uma clínica e deseja c
 - **Knex**: Um construtor de consultas SQL para Node.js, facilitando a interação com o banco de dados SQLite e a construção de queries SQL de forma programática.
 
 
+
+
+
+https://github.com/user-attachments/assets/e82ee052-7a5e-4d5a-999a-930034661ebb
+
+
+
 ## Pré-requisitos
 
 Antes de começar, certifique-se de ter o seguinte instalado em sua máquina:
