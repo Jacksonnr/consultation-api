@@ -4,9 +4,9 @@ Pensando em um cenário onde você é o administrador de uma clínica e deseja c
 
 ## Funcionalidades
 
-- **Cadastro de consultas**: Registre uma nova consulta com tipo de consulta, o nome do paciente, contato do mesmo e valor de pagamento.
+- **Cadastro de consultas**: Registre uma nova consulta 
 - **Visualização de consultas**: Veja todas as consultas já realizadas
-- **Visualização de uma única consulta**: Veja informações de uma determinada consulta (tipo de consulta, valor de pagamento e paciente).
+- **Visualização de uma única consulta**: Veja informações de uma determinada consulta 
 - **Atualização da consulta**: Atualize o tipo da consulta ou valor de pagamento do paciente.
 - **Exclusão de consulta**: Exclua uma consulta.
 
