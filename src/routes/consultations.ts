@@ -1,5 +1,5 @@
 import { FastifyInstance } from "fastify";
-import { z } from "zod";
+import { number, z } from "zod";
 import { knex } from "../database";
 
 export async function consultationRoutes (app:FastifyInstance) {
@@ -23,9 +23,23 @@ export async function consultationRoutes (app:FastifyInstance) {
     })
 
 
-    app.get('/users', async (request, reply) => {
+    app.get('/consultations', async (request, reply) => {
         const listConsultations  = await knex('consultations').select()
 
         return reply.status(200).send( { listConsultations } )
+    })
+
+
+    app.get('/consultation/:id', async (request, reply) => {
+        const getIdConsultation = z.object({
+            id: z.coerce.number()
+        })
+
+        const { id } = getIdConsultation.parse(request.params)
+
+        const consultation = await knex('consultations')
+        .where('consultation_id', id).first()
+
+        return reply.status(200).send( { consultation } )
     })
 }
