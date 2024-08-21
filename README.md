@@ -25,6 +25,7 @@ Antes de começar, certifique-se de ter o seguinte instalado em sua máquina:
 
 - [Node.js](https://nodejs.org/)
 - [NPM](https://www.npmjs.com/) 
+- Uma ferramenta de teste de API, como [INSOMNIA](https://insomnia.rest/) ou [POSTMAN](https://www.postman.com/)
 
 
 ## Instalação
@@ -41,11 +42,30 @@ Antes de começar, certifique-se de ter o seguinte instalado em sua máquina:
     npm install
     ```
 
-3. Inicie o servidor:
+3. Configure o ambiente:
+
+    Antes de iniciar o servidor, você pode precisar configurar variáveis de ambiente, como o banco de dados. Certifique-se de criar um arquivo .env com as configurações apropriadas. Um exemplo de arquivo .env pode ser:
+
+    ```bash
+    DATABASE_URL=your_database_url
+    PORT=3000
+    ```
+
+4. Crie o banco de dados:
+
+    ```bash
+    npx knex migrate:latest
+    ```
+
+5. Inicie o servidor:
 
     ```bash
     npm run dev
     ```
+
+6. Configure a ferramenta de testes de API para fazer requisições aos endpoints.
+
+
 
 O servidor estará disponível em `http://localhost:3333`.
 
@@ -62,7 +82,7 @@ O servidor estará disponível em `http://localhost:3333`.
         "consultation_type": "tipo de consulta",
         "patient": "nome do paciente",
         "patient_telephone_number": "412305847",
-        "payment_amount": "valor pago pelo paciente"
+        "payment_amount": 400
     }
     ```
 
@@ -71,15 +91,22 @@ O servidor estará disponível em `http://localhost:3333`.
 
 ### 2. Visualização de Consulta
 
-- **GET** `/consultation`
+- **GET** `/consultations`
 - **Descrição**: Retorna os dados de todas as consultas já realizadas.
 - **Corpo da Requisição**: (Não é necessário)
-- **Resposta**:
+- **Resposta**: 200 OK
+
     ```json
     {
+      "listConsultation": [
+        {
+        "consultation_id": 1,
         "consultation_type": "tipo de consulta",
         "patient": "nome do paciente",
-        "payment_amount": "valor pago pelo paciente"
+        "patient_telephone_number": "412305847",
+        "payment_amount": 400
+       }
+      ]
     }
     ```
 
@@ -89,14 +116,19 @@ O servidor estará disponível em `http://localhost:3333`.
 - **GET** `/consultation/:id`
 - **Descrição**: Retorna os dados de uma determinada consulta.
 - **Corpo da Requisição**: (Não é necessário)
-- **Resposta**:
+- **Resposta**: 200 OK
 
     ```json
     {
+      "listConsultation": [
+        {
+        "consultation_id": 1,
         "consultation_type": "tipo de consulta",
         "patient": "nome do paciente",
         "patient_telephone_number": "412305847",
-        "payment_amount": "valor pago pelo paciente"
+        "payment_amount": 400
+       }
+      ]
     }
     ```
 
@@ -104,14 +136,12 @@ O servidor estará disponível em `http://localhost:3333`.
 
 - **PUT** `/consultation/:id`
 - **Descrição**: Atualiza o tipo da consulta, o paciente e o valor de pagamento através do id da consulta.
-- **Corpo da Requisição** (opcional):
+- **Corpo da Requisição** (obrigatório passar o novo tipo da consulta e o novo valor):
 
     ```json
     {
-        "consultation_type": "tipo de consulta",
-        "patient": "nome do paciente",
-        "patient_telephone_number": "412305847",
-        "payment_amount": "valor pago pelo paciente"
+        "consultation_type": "novo tipo de consulta",
+        "payment_amount": 50
     }
     ```
 
@@ -121,7 +151,8 @@ O servidor estará disponível em `http://localhost:3333`.
 
 - **DELETE** `/consultation/:id`
 - **Descrição**: Exclui uma consulta através do id.
-- **Resposta**: 204 No Content
+- **Corpo da Requisição**: (Não é necessário)
+- **Resposta**: 200 OK
 
 ## Contribuindo
 
