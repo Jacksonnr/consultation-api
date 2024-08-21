@@ -22,7 +22,11 @@ Pensando em um cenário onde você é o administrador de uma clínica e deseja c
 
 
 
-https://github.com/user-attachments/assets/e82ee052-7a5e-4d5a-999a-930034661ebb
+
+
+https://github.com/user-attachments/assets/a856b163-530b-4a79-a74b-db1d14ae5a23
+
+
 
 
 
