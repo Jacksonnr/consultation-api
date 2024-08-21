@@ -48,7 +48,7 @@ Antes de começar, certifique-se de ter o seguinte instalado em sua máquina:
 
     ```bash
     DATABASE_URL=your_database_url
-    PORT=3000
+    PORT=3333
     ```
 
 4. Crie o banco de dados:
